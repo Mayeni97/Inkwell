@@ -101,12 +101,64 @@ export default function LandingPage({onEnter}) {
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
                 </section>
-        
-       </div>
+
+                <div className="text-center text-[#c4a88c] tracking-widest py-4">
+                    — ✦ —
+                </div>
+
+                <section className="text-center px-6 py-20 max-w-2xl mx-auto"> 
+                    <div className="text-xs tracking-widest uppercase text-[#a07850] mb-4">
+                        How it works
+                    </div>
+
+                    <h2 className="text-3xl italic font-serif mb-10">
+                        How it works
+                    </h2>
+                    
+                    <div className="flex gap-5 mb-8">
+                        <div className="text-4xl italic text-[#c4a88c] w-9 flex-shrink-0">
+                            1
+                        </div>
+                        <div className="font-bold mb-1">Get your free API key</div>
+                        <div className="text-sm text-[#7a6555] leading-relaxed">
+                            Sign up for a free account and get your API key to start using Inkwell's AI writing tools.
+                        </div>
+                    </div>
+
+                    <div className="flex gap-5 mb-8">
+                        <div className="text-4xl italic text-[#c4a882] w-9 flex-shrink-0">
+                            2
+                        </div>
+                        <div className="font-bold mb-1">Describe your book</div>
+                        <div className="text-sm text-[#7a6555] leading-relaxed">
+                            Pick your genre, tone and chapter count. Then describe your concept in plain English.
+                        </div>
+                    </div>
+
+                    <div className="flex gap-5 mb-8">
+                        <div className="text-4xl italic text-[#c4a88c] w-9 flex-shrink-0">
+                            3
+                        </div>
+                        <div className="font-bold mb-1">Write, edit and publish</div>
+                        <div className="text-sm text-[#7a6555] leading-relaxed">
+                            Inkwell generates your book. Edit with AI tools.
+                            Export as PDF or KDP format when you are done.
+                        </div>
+                    </div>
+
+                </section>
+
+                <footer className="border-t border-[#e0d5c5] px-8 py-6 flex justify-between items-center flex-wrap gap-3">
+                    <div className="italic text-[#a07850] font-bold">
+                    Inkwell
+                    </div>
+                    <div className="text-xs text-[#a09080]">
+                    Free forever · Powered by Gemini · Built with React + Vite and a dream
+                    </div>
+                </footer>
+        </div>
     )
 }
 
