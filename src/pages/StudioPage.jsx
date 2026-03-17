@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Topbar from '../components/Topbar'
+import Sidebar from '../components/Sidebar'
 
 export default function StudioPage() {
   const [activeTab, setActiveTab] = useState('write')
@@ -10,10 +11,13 @@ export default function StudioPage() {
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />
+      <div className="h-[calc(100vh-56px)]">
+      <Sidebar />
       <div className="flex items-center justify-center h-[calc(100vh-56px)]">
         <p className="text-[#a07850] italic">
           Active tab: {activeTab}
         </p>
+        </div>
       </div>
     </div>
   )
