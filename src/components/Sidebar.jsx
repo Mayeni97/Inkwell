@@ -3,6 +3,18 @@ import { useState } from "react"
 export default function Sidebar() {
   const [mode, setMode] = useState("auto")
   const [chapters, setChapters] = useState(12)
+  const [characters, setCharacters] = useState([])
+
+  function addCharacter() {
+    const name = prompt("Character name:")
+    if (!name) return
+    const role = prompt("Their role (Protagonist, Villain, Support):") || "Character"
+    setCharacters(prev => [...prev, { name, role }])
+  }
+
+  function removeCharacter(index) {
+    setCharacters(prev => prev.filter((_, i) => i !== index))
+  }
 
   return (
     <div className="w-72 bg-white border-r border-[#e0d5c5] h-full overflow-y-auto flex-shrink-0">
@@ -129,13 +141,37 @@ export default function Sidebar() {
       </div>
 
       {/* CHARACTERS */}
-      <div className="p-5 border-b border-[#e0d5c5]">
+      <div className="p-5">
         <div className="text-xs tracking-widest uppercase text-[#a07850] font-bold mb-3">
           Characters
         </div>
-        <div className="italic text-xs text-[#a07850] opacity-50">
-          Coming next!
+
+        <div className="flex flex-col gap-2 mb-3">
+          {characters.map((char, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-between bg-[#f9f6f1] border border-[#e0d5c5] rounded-lg px-3 py-2"
+            >
+              <div>
+                <div className="text-sm font-bold text-[#2c1f14]">{char.name}</div>
+                <div className="text-xs text-[#a07850] italic">{char.role}</div>
+              </div>
+              <button
+                onClick={() => removeCharacter(index)}
+                className="text-[#a07850] hover:text-red-400 text-xs transition-colors"
+              >
+                ✕
+              </button>
+            </div>
+          ))}
         </div>
+
+        <button
+          onClick={addCharacter}
+          className="w-full border border-dashed border-[#c4a882] rounded-lg py-2 text-xs text-[#a07850] hover:border-[#7a4f2d] hover:text-[#7a4f2d] transition-colors"
+        >
+          + Add Character
+        </button>
       </div>
 
     </div>
