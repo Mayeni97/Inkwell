@@ -1,4 +1,4 @@
-export default function Topbar({ activeTab, onTabChange }) {
+export default function Topbar({ activeTab, onTabChange, apiKey, onapiKeyChange }) {
   const tabs = [
     { id: 'write',   label: '✍️ Write'   },
     { id: 'edit',    label: '🔍 Edit'    },
@@ -29,6 +29,16 @@ export default function Topbar({ activeTab, onTabChange }) {
             {tab.label}
           </button>
         ))}
+      </div>
+
+      <div className="ml-auto">
+        <input
+          type="password"
+          placeholder="Gemini API key..."
+          value={apiKey}
+          onChange={e => onapiKeyChange(e.target.value)}
+          className="text-xs text-[#2c1f14] border border-[#e0d5c5] rounded-lg px-3 py-1.5 outline-none w-48 focus:border-[#7a4f2d] font-mono"
+        />
       </div>
 
     </div>
